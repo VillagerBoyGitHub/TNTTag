@@ -18,3 +18,6 @@ This plugin is compatible with **Genisys API 2.0.0**.
 # Requirements
 - [PocketUtils](https://github.com/VillagerBoyGitHub/PocketUtils)
 
+# Credits
+
+[ZDark Gaming](https://www.youtube.com/channel/UCNjjnGM-V81HWe5J_3owOCg) - making the task.
