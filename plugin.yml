@@ -1,0 +1,6 @@
+name: TNTTag
+api: 2.0.0
+author: Robert
+version: 1.0.0
+main: Robert\TNTTag\Main
+for: DarkWix
