@@ -4,6 +4,7 @@ namespace Robert\TNTTag\Commands;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\Player;
 use Robert\TNTTag\Main;
 use pocketmine\Server;
 class tnt extends Command {
@@ -18,6 +19,9 @@ class tnt extends Command {
     {
         switch($this->getName()) {
             case "tnt":
+                if(!($p instanceof Player)) {
+                    return $p->sendMessage("§cYou can only run this command in game.");
+                }
                 if(!isset($args[0])) {
                     $this->getUsage();
                     return;
@@ -33,6 +37,20 @@ class tnt extends Command {
                             return;
                         }
                         $this->base->joinGame($p);
+                        break;
+
+                    case "setspawn":
+                        if(!$p->hasPermission("tnt.admin")) {
+                            return $p->sendMessage("§cYou don't have permission to use this command.");
+                        }
+
+                        $x = $p->getX();
+                        $y = $p->getY();
+                        $z = $p->getZ();
+                        $worldName = $p->getLevel()->getName();
+
+                        $this->base->setSpawn($x, $y, $z, $worldName);
+                        
                         break;
                 }
                 break;

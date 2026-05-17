@@ -59,6 +59,20 @@ class Main extends PluginBase {
         $hub = Server::getInstance()->getPluginManager()->getPlugin("HubPatcher");
         $hub->tpToHub($p);
     }
+
+    public function setSpawn($x, $y, $z, $worldName) {
+        $this->getConfig()->setNested("x", $x);
+        $this->getConfig()->save();
+
+        $this->getConfig()->setNested("y", $y);
+        $this->getConfig()->save();
+
+        $this->getConfig()->setNested("z", $z);
+        $this->getConfig()->save();
+
+        $this->getConfig()->setNested("world", $worldName);
+        $this->getConfig()->save();
+    }
     public function joinGame($p) {
         $name = $p->getName();
         $this->inGame[$name] = $name;

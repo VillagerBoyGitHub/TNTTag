@@ -4,3 +4,7 @@ author: Robert
 version: 1.0.0
 main: Robert\TNTTag\Main
 for: DarkWix
+permissions:
+  tnt.admin:
+    default: op
+    description: "Allows you to change the TNTTag minigame spawn."
